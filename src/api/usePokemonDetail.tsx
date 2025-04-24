@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { PokemonDetail } from '../types/pokemonDetail';
-import { CachedPokemonDetailData } from '../types/cachedData';
+import { PokemonDetail } from '../types/pokemon-detail';
+import { CachedPokemonDetailData } from '../types/cached-data';
 import { CACHE_EXPIRATION } from '../config/global';
 
 const usePokemonDetailData = (nameOrId: string) => {
@@ -8,12 +8,13 @@ const usePokemonDetailData = (nameOrId: string) => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
   
-    const STORAGE_KEY = `pokemon-detail-cache-${nameOrId}`;
-  
+    
     useEffect(() => {
       const controller = new AbortController();
       const signal = controller.signal;
-  
+      
+      const STORAGE_KEY = `pokemon-detail-cache-${nameOrId}`;
+      
       const isCacheFresh = (timestamp: number): boolean => {
         return Date.now() - timestamp < CACHE_EXPIRATION;
       };
@@ -45,10 +46,14 @@ const usePokemonDetailData = (nameOrId: string) => {
   
           localStorage.setItem(STORAGE_KEY, JSON.stringify(toCache));
           setPokemon(data);
-        } catch (err: any) {
-          if (err.name !== "AbortError") {
+        } catch (err: unknown) {
+          if (err instanceof DOMException && err.name === "AbortError") {
+            // Do nothing, fetch was aborted
+          } else if (err instanceof Error) {
             console.error("Error fetching Pokémon detail:", err);
-            setError("Failed to fetch Pokémon detail.");
+            setError(err.message || "Failed to fetch Pokémon detail.");
+          } else {
+            setError("Unknown error occurred.");
           }
         } finally {
           setLoading(false);

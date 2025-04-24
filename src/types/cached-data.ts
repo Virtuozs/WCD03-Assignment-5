@@ -1,5 +1,5 @@
 import { Pokemon } from "./pokemon";
-import { PokemonDetail } from "./pokemonDetail";
+import { PokemonDetail } from "./pokemon-detail";
 
 export interface CachedPokemonData{
     data: Pokemon[];

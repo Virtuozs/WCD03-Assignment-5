@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Pokemon } from '../types/pokemon';
-import { CachedPokemonData } from '../types/cachedData';
+import { CachedPokemonData } from '../types/cached-data';
 import { CACHE_EXPIRATION, API_BASE_URL} from '../config/global';
 
 const POKEMON_LIMIT = 1000;
@@ -35,7 +35,7 @@ const usePokemons = () => {
                 name: pokemon.name,
                 url: pokemon.url,
                 image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${detail.id}.png`,
-                types: detail.types.map((t: any) => t.type.name),
+                types: detail.types.map((t: { type: { name: string } }) => t.type.name),
               };
             })
           );
@@ -80,12 +80,14 @@ const usePokemons = () => {
   
           localStorage.setItem(STORAGE_KEY, JSON.stringify(toCache));
           setPokemons(simplified);
-        } catch (err: any) {
-          if (err.name === "AbortError") {
+        } catch (err: unknown) {
+          if (err instanceof DOMException && err.name === "AbortError") {
             console.log("Fetch aborted");
-          } else {
+          } else if (err instanceof Error) {
             console.error("Error fetching Pokémon list:", err);
             setError(err.message || "Failed to fetch Pokémon.");
+          } else {
+            setError("Unknown error occurred.");
           }
         } finally {
           setLoading(false);
