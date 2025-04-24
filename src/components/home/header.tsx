@@ -67,7 +67,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onSortChange, children }) => 
                 className="h-10 w-auto"
               />
             </a>
-            {/* <a href="/" className="text-2xl font-bold text-[#252A3E] hover:text-[#3D4466] dark:text-white dark:hover:text-white transition-colors">Pokedex</a> */}
             <div className="flex items-center gap-2">
               <div className="sm:hidden relative">
                 <button
@@ -85,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onSortChange, children }) => 
                   <input
                     type="text"
                     value={searchValue}
-                    placeholder="Search Pokémon..."
+                    placeholder="Search Pokemon..."
                     onChange={handleSearchChange}
                     className={`px-2 py-2 w-full rounded-md bg-white text-[#252A3E] placeholder-[#97A0CC] border border-[#97A0CC] focus:outline-none focus:ring-2 focus:ring-[#97A0CC] transition-all dark:bg-[#3D4466] dark:text-white dark:placeholder-[#BCC2E0] dark:border-[#4F5784]`}
                   />
@@ -112,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onSortChange, children }) => 
                 <input
                   type="text"
                   value={searchValue}
-                  placeholder="Search Pokémon..."
+                  placeholder="Search Pokemon..."
                   onChange={handleSearchChange}
                   className="px-4 py-2 rounded-md bg-white text-[#252A3E] placeholder-[#97A0CC] border border-[#97A0CC] focus:outline-none focus:ring-2 focus:ring-[#97A0CC] transition-all dark:bg-[#3D4466] dark:text-white dark:placeholder-[#BCC2E0] dark:border-[#4F5784]"
                 />
@@ -192,110 +191,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onSortChange, children }) => 
         </div>
       </div>
     </header>
-    // <header className="header-container">
-    //   <div className="max-w-screen-xl mx-auto px-4">
-    //     <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-    //       <div className="flex items-center justify-between w-full">
-    //         <a href="/" className="app-title">PokéTrove</a>
-
-    //         <div className="flex items-center gap-2">
-    //           <button
-    //             className="sm:hidden text-white p-2"
-    //             onClick={() => setShowSearch(!showSearch)}
-    //           >
-    //             <Search size={20} />
-    //           </button>
-    //           <button
-    //             onClick={toggleTheme}
-    //             className="sm:hidden text-white dark:text-yellow-300 hover:scale-110 transform transition"
-    //           >
-    //             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-    //           </button>
-    //         </div>
-    //       </div>
-
-    //       {(showSearch || isWideScreen) && (
-    //         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4 w-full sm:w-auto sm:ml-auto">
-    //           <div className="relative flex flex-col w-full sm:w-auto">
-    //             <input
-    //               type="text"
-    //               value={searchValue}
-    //               placeholder="Search Pokémon..."
-    //               onChange={handleSearchChange}
-    //               className="input-search"
-    //             />
-    //             {warning && (
-    //               <span key={warning} className="warning-message animate-shake">
-    //                 ⚠️ {warning}
-    //               </span>
-    //             )}
-    //           </div>
-          
-    //           <div className="flex sm:hidden flex-row items-center gap-2 w-full">
-    //             <div className="flex-1">
-    //               <select
-    //                 onChange={(e) => onSortChange(e.target.value as SortOrder)}
-    //                 className="select-sort w-full"
-    //               >
-    //                 <option value="id-asc">ID: ↑</option>
-    //                 <option value="id-desc">ID: ↓</option>
-    //                 <option value="name-asc">Name: A→Z</option>
-    //                 <option value="name-desc">Name: Z→A</option>
-    //               </select>
-    //             </div>
-            
-    //             <div className="flex-1">
-    //               <select
-    //                 value={filterType}
-    //                 onChange={(e) => setFilterType(e.target.value as PokemonType)}
-    //                 className="select-sort w-full"
-    //               >
-    //                 {types.map((type) => (
-    //                   <option key={type} value={type}>
-    //                     {type[0].toUpperCase() + type.slice(1)}
-    //                   </option>
-    //                 ))}
-    //               </select>
-    //             </div>
-            
-    //             <div className="switch-display-mobile">
-    //               {children}
-    //             </div>
-    //           </div>
-            
-    //           <div className="hidden sm:flex items-center gap-4">
-    //             <select
-    //               onChange={(e) => onSortChange(e.target.value as SortOrder)}
-    //               className="select-sort"
-    //             >
-    //               <option value="id-asc">Sort by ID: Lowest First</option>
-    //               <option value="id-desc">Sort by ID: Highest First</option>
-    //               <option value="name-asc">Sort by Name: A to Z</option>
-    //               <option value="name-desc">Sort by Name: Z to A</option>
-    //             </select>
-            
-    //             <select
-    //               value={filterType}
-    //               onChange={(e) => setFilterType(e.target.value as PokemonType)}
-    //               className="select-sort"
-    //             >
-    //               {types.map((type) => (
-    //                 <option key={type} value={type}>
-    //                   {type[0].toUpperCase() + type.slice(1)}
-    //                 </option>
-    //               ))}
-    //             </select>
-    //             <div className="flex items-center gap-2">
-    //               <button onClick={toggleTheme} className="ml-2 text-white dark:text-yellow-300">
-    //                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-    //               </button>
-    //             </div>
-    //           </div>
-    //         </div>          
-    //       )}
-    //     </div>
-    //   </div>
-    // </header>
   );
 };
 
