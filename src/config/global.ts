@@ -10,6 +10,17 @@ export type PokemonType =
   | "electric"
   | "normal"
   | "fighting"
-  | "psychic";
+  | "psychic"
+  | "bug"
+  | "poison"
+  | "ground"
+  | "rock"
+  | "ghost"
+  | "ice"
+  | "dragon"
+  | "fairy"
+  | "dark"
+  | "steel"
+  | "flying";
 
 export type SortOrder = "id-asc" | "id-desc" | "name-asc" | "name-desc";

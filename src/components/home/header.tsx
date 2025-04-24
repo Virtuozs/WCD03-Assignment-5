@@ -13,6 +13,17 @@ const types: PokemonType[] = [
     "normal",
     "fighting",
     "psychic",
+    "bug",
+    "poison",
+    "ground",
+    "rock",
+    "ghost",
+    "ice",
+    "dragon",
+    "fairy",
+    "dark",
+    "steel",
+    "flying",
   ];
 
 interface HeaderProps {
@@ -78,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onSortChange, children }) => 
 
                 <div
                   className={`absolute right-0 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out ${
-                    showSearch ? 'w-48 opacity-100 scale-100' : 'w-0 opacity-0 scale-95'
+                    showSearch ? 'w-45 opacity-100 scale-100' : 'w-0 opacity-0 scale-95'
                   } overflow-hidden`}
                 >
                   <input

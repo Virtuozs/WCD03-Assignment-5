@@ -27,8 +27,8 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, viewMode = 'single' 
         className={`border rounded-xl shadow-md p-4 transition-all duration-500 ease-in-out
           ${viewMode === 'grid' ? 'text-center' : ''}
           ${viewMode === 'single' ? 'items-center text-center p-6' : ''}
-          bg-[#252A3E] text-[#F0F3FF] border-[#2F3655]
-          dark:bg-[#F0F3FF] dark:text-[#0C1231] dark:border-[#DDE5F7]
+          bg-white text-[#192038] border-none shadow-xl
+          dark:bg-[#1B1F2F] dark:text-[#97A0CC] dark:border-[#DDE5F7]
         `}
       >
         <h2
