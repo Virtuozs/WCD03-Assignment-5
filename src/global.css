@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+  }
+}
+
+body {
+    @apply bg-[#F0F3FF] text-[#192038] transition-colors duration-300;
+  }
+  
+.dark body {
+    @apply bg-[#252A3E] text-[#F0F3FF];
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+.shake:hover {
+  animation: shake 0.3s ease-in-out;
+}
+
+.bounce-slow {
+  animation: bounce 2s infinite;
+}
