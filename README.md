@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fikriandrrhm19/poketrove/main/public/image/pokemon_logo.png" alt="Pokémon Logo" width="280"/>
+</p>
 
-Currently, two official plugins are available:
+**Pokedex** is a modern and responsive web application built using **React**, **Tailwind CSS**, and **Vite**.  This app lets users browse, and explore Pokémon data from the [PokéAPI](https://pokeapi.co/) with a smooth and engaging user experience. turning the classic Pokédex into an interactive digital adventure.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [PokéAPI](https://pokeapi.co/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- ⚡ **Fast & modern UI** powered by Vite + Tailwind CSS  
+- 🌙 **Dark & light mode** with persistence via localStorage  
+- 🔍 **Real-time search** and dynamic Pokemon filtering  
+- 📄 **Infinite Scroll** for seamless content loading   
+- 📱 **Responsive view**: Grid/List toggle for all screen sizes  
+- 🧠 **Reusable components & hooks** for cleaner structure  
+- ⬆️ **Animated scroll-to-top** button    
+
+# Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```
+git clone https://github.com/Virtuozs/WCD03-Assignment-5.git
+cd WCD03-Assignment-5
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Start Development Server
 ```
+npm run dev
+```
+
+Open http://localhost:5173 in your browser to see the app and explore locally.
+
+### Build for Production
+```
+npm run build
+```
+
+## Screenshots
+
+<p align="center">
+  Desktop Mode  
+</p>
+
+<p align="center"> 
+    <img src="https://github.com/user-attachments/assets/25dc728d-4f4b-48d3-9836-a80b794d378b" width="720" /> 
+</p> 
+<p align="center"> 
+    <img src="https://github.com/user-attachments/assets/ae6f0805-0e57-43c9-a75f-b6c57ba89da1" width="720" /> 
+</p>
+
+<p align="center">
+  Mobile Mode  
+</p>
+
+<p align="center"> 
+    <img src="https://github.com/user-attachments/assets/9be5a90a-a35b-4f39-9105-df182a156312" width="720" /> 
+</p>
+<p align="center"> 
+    <img src="https://github.com/user-attachments/assets/2a1ad6fa-7418-4a5a-a161-bdaeb2377197" width="720" /> 
+</p>
